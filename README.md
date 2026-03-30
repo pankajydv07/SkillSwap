@@ -1,16 +1,64 @@
 # 🔁 Skill Swap – Exchange Skills, Empower Growth
+# 🔁 SkillSwap – Exchange Skills, Empower Growth
 
-## 🧠 Overview
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Node.js Version](https://img.shields.io/badge/node-%3E%3D14.0.0-brightgreen.svg)](https://nodejs.org/)
+[![React](https://img.shields.io/badge/React-18.x-blue.svg)](https://reactjs.org/)
+[![MongoDB](https://img.shields.io/badge/MongoDB-5.x-green.svg)](https://www.mongodb.com/)
 
+> A full-stack platform connecting people through skill exchange and mutual learning
+
+---
+ 
+ ## 🧠 Overview
+ 
 **Skill Swap** is a full-stack web application that connects people through the power of shared skills and knowledge exchange. It's a modern platform where users can offer skills they have and request skills they want to learn, creating a collaborative community of mutual growth and learning.
+**SkillSwap** is a full-stack web application that connects people through the power of shared skills and knowledge exchange. It's a modern platform where users can offer skills they have and request skills they want to learn, creating a collaborative community of mutual growth and learning.
 
 Whether you're offering help or seeking it, every exchange builds trust and community. Grow, connect, and transform—one skill at a time, in a place made for mutual growth.
 
+---
 
-DEMO Video:https://drive.google.com/file/d/1ZMJxYjxYjjFzmE9jhrMcXIvn_1tA-n-r/view?usp=sharing
+## 📋 Table of Contents
 
-you can view it here too
-https://screenrec.com/share/j2eBKHxTR7
+- [Overview](#-overview)
+- [Tech Stack](#-tech-stack)
+- [Features](#-features)
+- [Installation & Setup](#-installation--setup)
+- [Environment Variables](#-environment-variables)
+- [Project Structure](#-project-structure)
+- [Usage](#-usage)
+- [Screenshots](#-screenshots)
+- [API Documentation](#-api-documentation)
+- [Contributing](#-contributing)
+- [Troubleshooting](#-troubleshooting)
+- [License](#-license)
+- [Contact & Acknowledgments](#-contact--acknowledgments)
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **React 18** - Modern UI library with hooks and functional components
+- **React Router** - Client-side routing for seamless navigation
+- **Axios** - HTTP client for API requests
+- **CSS3/Styled Components** - Modern styling approaches
+
+### Backend
+- **Node.js** - JavaScript runtime environment
+- **Express.js** - Fast, unopinionated web framework
+- **MongoDB** - NoSQL database for flexible data storage
+- **Mongoose** - Elegant MongoDB object modeling
+- **JWT** - JSON Web Tokens for secure authentication
+- **Bcrypt** - Password hashing for security
+
+### Development Tools
+- **Concurrently** - Run multiple npm commands simultaneously
+- **Nodemon** - Auto-restart server during development
+- **dotenv** - Environment variable management
+
+---
 
 ## ✨ Features
 
@@ -54,243 +102,440 @@ https://screenrec.com/share/j2eBKHxTR7
 ### 📊 Admin Panel & Management
 - **Admin Dashboard**: Comprehensive analytics and platform statistics
 - **User Management**: Admin tools for user moderation and management
-- **Swap Monitoring**: Track and analyze skill swap activities
-- **Data Export**: Export platform data for analysis and reporting
-- **Platform Analytics**: Monitor user engagement and platform growth
+- **Content Moderation**: Review and manage reported content
+- **System Analytics**: Track user engagement and platform growth
+- **Role-based Access**: Different permission levels for users and admins
 
-### 🛡️ Security & Performance
-- **Rate Limiting**: API protection against abuse and spam
-- **Input Validation**: Comprehensive data validation using Joi
-- **Error Handling**: Robust error handling and user feedback
-- **CORS Protection**: Secure cross-origin resource sharing
-- **Helmet Security**: Enhanced security headers and protection
+### 💬 Communication & Notifications
+- **Real-time Messaging**: Chat functionality between swap partners
+- **Notification System**: Email and in-app notifications for requests
+- **Activity Feed**: Track recent activities and updates
+- **Email Integration**: Automated emails for important updates
 
-### 🎨 Modern UI/UX Design
-- **Tailwind CSS**: Modern, responsive design system
-- **Lucide Icons**: Beautiful, consistent iconography
-- **Loading States**: Smooth loading animations and spinners
-- **Toast Notifications**: Real-time feedback with React Hot Toast
-- **Modal System**: Clean, accessible modal interactions
-- **Responsive Layout**: Optimized for desktop, tablet, and mobile devices
+### 🛡️ Security & Privacy
+- **Data Encryption**: Secure storage of sensitive information
+- **Input Validation**: Protection against common vulnerabilities
+- **CORS Protection**: Configured for secure cross-origin requests
+- **Rate Limiting**: Protection against brute force attacks
 
-### 📱 Technical Features
-- **Form Management**: React Hook Form for efficient form handling
-- **Date Management**: Date-fns for date formatting and manipulation
-- **API Integration**: Axios for HTTP requests and API communication
-- **Context Management**: React Context for state management
-- **Custom Hooks**: Reusable custom hooks for common functionality
+---
 
-## 🧬 Unique Features
-
-- 🔄 **Skill Exchange System** – Direct skill-for-skill swapping without monetary transactions
-- 📊 **Comprehensive Admin Panel** – Full platform management and analytics dashboard
-- 🎨 **Modern Design System** – Beautiful, responsive UI with gradient themes and animations
-- 🔒 **Enterprise-Grade Security** – JWT authentication, rate limiting, and input validation
-- 📱 **Mobile-First Approach** – Fully responsive design optimized for all devices
-- ⚡ **High Performance** – Vite-powered frontend with optimized build and development experience
-- 🔍 **Advanced Filtering** – Smart search and filter capabilities for finding the perfect skill match
-- 📅 **Scheduling Integration** – Built-in scheduling for skill exchange sessions
-- 💬 **Integrated Communication** – Seamless messaging and request management system
-- 🏷️ **Skill Categorization** – Organized skill taxonomy for easy discovery
-- 🎯 **Real-Time Updates** – Live status updates and notifications throughout the platform
-
-## 🧰 Tech Stack
-
-### Frontend
-- **React 18.2.0**: Modern React with hooks and functional components
-- **Vite**: Lightning-fast build tool with hot module replacement
-- **Tailwind CSS**: Utility-first CSS framework for rapid UI development
-- **React Router DOM**: Client-side routing and navigation
-- **React Hook Form**: Performant forms with easy validation
-- **Lucide React**: Beautiful and consistent icon library
-- **React Hot Toast**: Elegant toast notifications
-- **Axios**: Promise-based HTTP client for API requests
-- **Date-fns**: Modern JavaScript date utility library
-
-### Backend
-- **Node.js**: JavaScript runtime for server-side development
-- **Express.js**: Fast, minimalist web framework
-- **MongoDB**: NoSQL database for flexible data storage
-- **Mongoose**: Elegant MongoDB object modeling
-- **JSON Web Token (JWT)**: Secure authentication and authorization
-- **bcryptjs**: Password hashing and security
-- **Joi**: Data validation library
-
-### Security & Performance
-- **Helmet**: Security middleware for Express
-- **CORS**: Cross-origin resource sharing configuration
-- **Express Rate Limit**: Rate limiting middleware
-- **Input Validation**: Comprehensive request validation
-
-### Development Tools
-- **Nodemon**: Auto-restart development server
-- **Concurrently**: Run multiple commands simultaneously
-- **PostCSS & Autoprefixer**: CSS processing and vendor prefixing
-
-## 🚀 Getting Started
+## 🚀 Installation & Setup
 
 ### Prerequisites
-- Node.js (v16 or higher)
-- npm or yarn package manager
-- MongoDB (local installation or MongoDB Atlas account)
 
-### Installation
+Before you begin, ensure you have the following installed:
+- **Node.js** (v14.0.0 or higher)
+- **npm** (v6.0.0 or higher) or **yarn**
+- **MongoDB** (local installation or MongoDB Atlas account)
+- **Git**
+
+### Step-by-Step Installation
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/pankajydv07/skill-swap-platform.git
-   cd skill-swap-platform
+   git clone https://github.com/pankajydv07/SkillSwap.git
+   cd SkillSwap
    ```
-
-2. **Install dependencies**
+Whether you're offering help or seeking it, every exchange builds trust and community. Grow, connect, and transform—one skill at a time, in a place made for mutual growth.
+2. **Install root dependencies**
    ```bash
-   # Install root dependencies
-   npm install
-   
-   # Install server dependencies
-   cd server
-   npm install
-   
-   # Install client dependencies
-   cd ../client
    npm install
    ```
-
-3. **Set up environment variables**
-   
-   Create `.env` file in the root directory:
-   
-   ```env
-   # Server Configuration
-   PORT=5000
-   NODE_ENV=development
-   
-   # Database
-   MONGODB_URI=mongodb://localhost:27017/skillswap
-   
-   # JWT Secret
-   JWT_SECRET=your_super_secret_jwt_key_here
-   
-   # Client URL
-   CLIENT_URL=http://localhost:3000
-   
-   # External APIs (optional)
-   MAPBOX_TOKEN=your_mapbox_token_here
-   ```
-
-4. **Seed the database with sample data**
+ 
+3. **Install server dependencies**
    ```bash
    cd server
+   npm install
+   cd ..
+   ```
+ 
+DEMO Video:https://drive.google.com/file/d/1ZMJxYjxYjjFzmE9jhrMcXIvn_1tA-n-r/view?usp=sharing
+4. **Install client dependencies**
+   ```bash
+   cd client
+   npm install
+   cd ..
+   ```
+ 
+you can view it here too
+https://screenrec.com/share/j2eBKHxTR7
+5. **Set up environment variables**
+   ```bash
+   cp .env.example .env
+   # Edit .env with your configuration
+   ```
+ 
+## ✨ Features
+6. **Seed the database (optional)**
+   ```bash
    npm run seed
    ```
-
-5. **Start the development servers**
+ 
+### 🔐 Authentication & User Management
+- **Secure Authentication**: JWT-based login/signup with email & password
+- **User Profiles**: Comprehensive profile management with skills offered/wanted
+- **Privacy Controls**: Public/private profile visibility settings
+- **Protected Routes**: Secure access control throughout the application
+- **Profile Customization**: Update personal information, availability, and location
+7. **Run the application**
    ```bash
-   # From root directory
    npm run dev
    ```
+ 
+### 🏠 Home & Landing Page
+- **Dynamic Landing Page**: Engaging hero section with gradient designs
+- **Feature Showcase**: Clear presentation of platform capabilities
+- **Call-to-Actions**: Strategic CTAs for "Browse Skills", "Start Learning", etc.
+- **Responsive Design**: Mobile-first approach with modern UI/UX
+- **Platform Overview**: Clear introduction to skill exchange concept
+   This will start both the server and client concurrently:
+   - Server runs on `http://localhost:5000` (or your configured PORT)
+   - Client runs on `http://localhost:3000`
+ 
+### 🔍 Browse & Discovery
+- **Advanced Search**: Search by skill name, category, or keywords
+- **Smart Filters**: Filter by availability, experience level, and user type
+- **User Cards**: Clean, informative user profile cards with key details
+- **Skill Matching**: Intelligent matching between offered and wanted skills
+- **Real-time Updates**: Live availability and status updates
+- **Pagination**: Efficient browsing through large user databases
+---
+ 
+### 👤 User Dashboard & Profiles
+- **Personal Dashboard**: Overview of user's skills, requests, and activity
+- **Skill Management**: Add, edit, and organize skills offered and wanted
+- **Skill Categories**: Organized skill categorization system
+- **Availability Settings**: Configure when you're available for skill exchanges
+- **Location Services**: Location-based skill matching and suggestions
+## 🔐 Environment Variables
+ 
+### 🔄 Skill Swap Requests
+- **Request Management**: Send, receive, and manage skill swap requests
+- **Request Details**: Comprehensive request forms with messaging
+- **Status Tracking**: Track request states (pending, accepted, rejected, completed)
+- **Scheduled Sessions**: Date and time scheduling for skill exchanges
+- **Request History**: Complete history of all swap requests and their outcomes
+- **Feedback System**: Rate and review completed skill exchanges
+Create a `.env` file in the root directory and add the following variables:
+ 
+### 📊 Admin Panel & Management
+- **Admin Dashboard**: Comprehensive analytics and platform statistics
+- **User Management**: Admin tools for user moderation and management
+-
+```env
+# Server Configuration
+PORT=5000
+NODE_ENV=development
 
-   This will start both the backend (port 5000) and frontend (port 3000) concurrently.
+# Database
+MONGO_URI=mongodb://localhost:27017/skillswap
+# Or use MongoDB Atlas: mongodb+srv://<username>:<password>@cluster.mongodb.net/skillswap
 
-6. **Access the application**
-   - Frontend: http://localhost:3000
-   - Backend API: http://localhost:5000
-   - Admin Login: john@example.com / password123
+# JWT Secret
+JWT_SECRET=your_super_secret_jwt_key_here
+JWT_EXPIRE=7d
 
-### Available Scripts
+# Email Configuration (Optional - for notifications)
+EMAIL_SERVICE=gmail
+EMAIL_USER=your_email@gmail.com
+EMAIL_PASS=your_app_password
 
-- `npm run dev` - Start both frontend and backend in development mode
-- `npm run build` - Build the frontend for production
-- `npm run server:dev` - Start only the backend server
-- `npm run client:dev` - Start only the frontend client
-- `npm run seed` - Seed the database with sample data
+# Client URL (for CORS)
+CLIENT_URL=http://localhost:3000
+```
+
+> ⚠️ **Important**: Never commit your `.env` file to version control. It's already included in `.gitignore`.
+
+---
 
 ## 📁 Project Structure
 
 ```
-skill-swap-platform/
-├── client/                 # React frontend
-│   ├── public/
-│   │   ├── index.html
-│   │   └── favicon.ico
-│   ├── src/
-│   │   ├── components/     # Reusable UI components
-│   │   │   ├── common/     # Common components
-│   │   │   ├── auth/       # Authentication components
-│   │   │   ├── profile/    # Profile components
-│   │   │   ├── swaps/      # Swap request components
-│   │   │   └── admin/      # Admin components
-│   │   ├── pages/          # Main application pages
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── services/       # API services and utilities
-│   │   └── utils/          # Helper functions
-│   ├── package.json
-│   └── tailwind.config.js
-├── server/                 # Node.js backend
-│   ├── controllers/        # Route controllers
-│   ├── middleware/         # Custom middleware
-│   ├── models/             # Database models
-│   ├── routes/             # API routes
-│   ├── utils/              # Server utilities
-│   ├── config/             # Configuration files
-│   ├── server.js
+SkillSwap/
+├── 📁 client/                 # React Frontend
+│   ├── 📁 public/             # Static assets
+│   ├── 📁 src/
+│   │   ├── 📁 components/     # Reusable UI components
+│   │   ├── 📁 pages/          # Page components
+│   │   ├── 📁 context/        # React context (Auth, etc.)
+│   │   ├── 📁 hooks/          # Custom React hooks
+│   │   ├── 📁 services/       # API service functions
+│   │   ├── 📁 utils/          # Utility functions
+│   │   ├── App.jsx            # Main App component
+│   │   └── index.js           # Entry point
 │   └── package.json
-├── .env.example
-├── README.md
-└── package.json
+│
+├── 📁 server/                 # Node.js/Express Backend
+│   ├── 📁 config/             # Database configuration
+│   ├── 📁 controllers/        # Route controllers
+│   ├── 📁 middleware/         # Custom middleware (auth, error handling)
+│   ├── 📁 models/             # Mongoose models
+│   ├── 📁 routes/             # API routes
+│   ├── 📁 utils/              # Utility functions
+│   ├── 📁 seed/               # Database seeding files
+│   ├── server.js              # Entry point
+│   └── package.json
+│
+├── 📄 .env.example            # Environment variables template
+├── 📄 .gitignore              # Git ignore rules
+├── 📄 package.json            # Root package.json
+└── 📄 README.md               # Project documentation
 ```
 
-## 🔧 Admin Features
+---
 
-### Default Admin Account
-- **Email**: john@example.com
-- **Password**: password123
+## 📖 Usage
 
-### Admin Capabilities
-- **Dashboard Analytics**: View platform statistics and user metrics
-- **User Management**: Activate/deactivate users and manage accounts
-- **Swap Monitoring**: Track all skill exchange activities
-- **Data Export**: Export user and swap data for analysis
+### Getting Started
 
-## 🎯 Key Features Implemented
+1. **Register an Account**
+   - Visit `http://localhost:3000`
+   - Click "Sign Up" and create your profile
+   - Verify your email (if email service is configured)
 
-### ✅ Core Functionality
-- User registration and authentication
-- Profile management with skills
-- Skill browsing and filtering
-- Swap request system
-- Admin dashboard
-- Responsive design
-- Real-time notifications
+2. **Complete Your Profile**
+   - Add skills you can offer (e.g., "JavaScript", "Guitar", "Cooking")
+   - Add skills you want to learn
+   - Set your availability and location
+   - Upload a profile picture
 
-### ✅ Security Features
-- JWT-based authentication
-- Password hashing with bcrypt
-- Input validation and sanitization
-- Rate limiting protection
-- CORS configuration
+3. **Browse Skills**
+   - Use the search bar to find specific skills
+   - Apply filters to narrow down results
+   - View user profiles to learn more about potential swap partners
 
-### ✅ User Experience
-- Modern, clean interface
-- Mobile-responsive design
-- Loading states and error handling
-- Toast notifications
-- Intuitive navigation
+4. **Request a Swap**
+   - Click "Request Swap" on a user's profile
+   - Select which skills you want to exchange
+   - Propose dates and times
+   - Add a personalized message
 
-## 🔗 Mockup Link
+5. **Manage Requests**
+   - View incoming requests in your dashboard
+   - Accept, decline, or negotiate swap terms
+   - Track the status of your sent requests
 
-🔗 https://app.excalidraw.com/l/65VNwvy7c4X/8bM86GXnnUN
+### Admin Features
 
-## 👨‍💻 Team – *Comet*
+1. Access the admin panel at `http://localhost:3000/admin`
+2. View platform analytics and user statistics
+3. Manage user accounts and moderate content
+4. Monitor reported issues and resolve disputes
 
-- 👩‍💻 **Rashi Agrawal** - Frontend Developer
-- 👨‍💻 **Ujjawal Panday** - Backend Developer  
-- 👩‍💻 **Humairah Shaik** - UI/UX Designer
-- 👨‍💻 **Pankaj Yadav** - Full Stack Developer
+---
 
-> *We believe in building collaborative tools that create real impact.*
+## 📸 Screenshots
+
+### Demo Videos
+🎥 **[Watch Full Demo](https://drive.google.com/file/d/1ZMJxYjxYjjFzmE9jhrMcXIvn_1tA-n-r/view?usp=sharing)**
+
+🎥 **[Alternative Demo Link](https://screenrec.com/share/j2eBKHxTR7)**
+
+### Key Features Preview
+
+*Screenshots coming soon - add images to `/screenshots` folder and update links*
+
+| Feature | Preview |
+|---------|---------|
+| Landing Page | ![Landing](screenshots/landing.png) |
+| Browse Skills | ![Browse](screenshots/browse.png) |
+| User Dashboard | ![Dashboard](screenshots/dashboard.png) |
+| Swap Requests | ![Requests](screenshots/requests.png) |
+| Admin Panel | ![Admin](screenshots/admin.png) |
+
+---
+
+## 📚 API Documentation
+
+### Base URL
+```
+Development: http://localhost:5000/api
+Production: https://your-domain.com/api
+```
+
+### Authentication Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/auth/register` | Register new user |
+| POST | `/auth/login` | Login user |
+| GET | `/auth/me` | Get current user |
+| PUT | `/auth/profile` | Update profile |
+
+### User Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/users` | Get all users |
+| GET | `/users/:id` | Get user by ID |
+| GET | `/users/search` | Search users by skill |
+| PUT | `/users/:id` | Update user |
+| DELETE | `/users/:id` | Delete user |
+
+### Skill Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/skills` | Get all skills |
+| POST | `/skills` | Add new skill |
+| PUT | `/skills/:id` | Update skill |
+| DELETE | `/skills/:id` | Delete skill |
+
+### Swap Request Endpoints
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| GET | `/requests` | Get user requests |
+| POST | `/requests` | Create request |
+| PUT | `/requests/:id` | Update request status |
+| DELETE | `/requests/:id` | Cancel request |
+
+> 📖 **Full API documentation** available at `/api/docs` when running in development mode.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these guidelines:
+
+### Getting Started
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### Branch Naming Conventions
+- `feature/description` - New features
+- `bugfix/description` - Bug fixes
+- `hotfix/description` - Critical fixes
+- `docs/description` - Documentation updates
+- `refactor/description` - Code refactoring
+
+### Code Style Guidelines
+- Follow ESLint configuration
+- Use meaningful variable names
+- Comment complex logic
+- Write tests for new features
+- Ensure all tests pass before submitting PR
+
+### Pull Request Process
+1. Update the README.md with details of changes if applicable
+2. Ensure your code follows the existing code style
+3. Include relevant test cases
+4. Request review from maintainers
+5. Address feedback promptly
+
+---
+
+## 🛠️ Troubleshooting
+
+### Common Issues
+
+#### CORS Errors
+**Problem**: `Access-Control-Allow-Origin` errors in browser console
+**Solution**: 
+- Ensure `CLIENT_URL` in server `.env` matches your frontend URL
+- Check that CORS middleware is properly configured in server
+
+#### Database Connection Issues
+**Problem**: `MongoNetworkError` or connection timeout
+**Solution**:
+- Verify MongoDB is running locally or check Atlas connection string
+- Ensure IP whitelist includes your current IP (for Atlas)
+- Check network connectivity
+
+#### Port Already in Use
+**Problem**: `EADDRINUSE: Port 5000/3000 already in use`
+**Solution**:
+```bash
+# Find and kill process on port 5000 (macOS/Linux)
+
+# Or change ports in .env file
+PORT=5001
+```
+
+#### JWT Authentication Errors
+**Problem**: `Invalid token` or `Unauthorized` errors
+**Solution**:
+- Ensure `JWT_SECRET` is set in server `.env`
+- Clear browser localStorage and login again
+- Check token expiration settings
+
+#### npm install fails
+**Problem**: Dependency installation errors
+**Solution**:
+```bash
+# Clear npm cache
+npm cache clean --force
+
+# Delete node_modules and reinstall
+rm -rf node_modules package-lock.json
+npm install
+```
+
+### Still Having Issues?
+- Check [Issues](https://github.com/pankajydv07/SkillSwap/issues) for similar problems
+- Create a new issue with detailed error logs
+- Contact maintainers (see Contact section)
+
+---
 
 ## 📄 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License
+
+Copyright (c) 2024 Pankaj Yadav
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## 👥 Contact & Acknowledgments
+
+### Author
+
+**Pankaj Yadav**
+- GitHub: [@pankajydv07](https://github.com/pankajydv07)
+- LinkedIn: [Pankaj Yadav](https://linkedin.com/in/pankajydv07)
+- Email: pankajydv07@gmail.com
+
+### Acknowledgments
+
+- [React](https://reactjs.org/) - Frontend library
+- [Express](https://expressjs.com/) - Backend framework
+- [MongoDB](https://www.mongodb.com/) - Database
+- [Mongoose](https://mongoosejs.com/) - ODM library
+- [JWT](https://jwt.io/) - Authentication
+- [Node.js](https://nodejs.org/) - Runtime environment
+
+### Support
+
+If you found this project helpful, please consider giving it a ⭐ on GitHub!
+
+---
+
+<p align="center">Made with ❤️ by Pankaj Yadav</p>
+
+<p align="center">
+  <a href="https://github.com/pankajydv07/SkillSwap">GitHub</a> •
+  <a href="#-installation--setup">Documentation</a> •
+  <a href="#-contributing">Contribute</a>
+</p>

@@ -1,0 +1,280 @@
+import pytest
+import os
+import re
+from pathlib import Path
+
+class TestReadmeStructure:
+    """Tests to verify README.md structure and content improvements"""
+    
+    @pytest.fixture(scope="class")
+    def readme_content(self):
+        """Fixture to load README.md content"""
+        readme_path = Path("README.md")
+        if not readme_path.exists():
+            pytest.skip("README.md not found")
+        return readme_path.read_text(encoding="utf-8")
+    
+    def test_readme_file_exists(self):
+        """Verify README.md exists in repository root"""
+        assert Path("README.md").exists(), "README.md should exist in repository root"
+    
+    def test_readme_has_title(self, readme_content):
+        """Verify README has main title with project name"""
+        assert "# 🔁 SkillSwap" in readme_content or "# SkillSwap" in readme_content, \
+            "README should have SkillSwap as main title"
+    
+    def test_readme_has_badges(self, readme_content):
+        """Verify README contains status badges"""
+        badge_patterns = [
+            r"\[\!\[.*\]\(.*shields\.io.*\)\]",  # shields.io badges
+            r"\[\!\[License",  # License badge
+            r"\[\!\[Node\.js",  # Node version badge
+        ]
+        assert any(re.search(pattern, readme_content) for pattern in badge_patterns), \
+            "README should contain status badges"
+    
+    def test_readme_has_table_of_contents(self, readme_content):
+        """Verify README has Table of Contents section"""
+        toc_patterns = [
+            r"## 📋 Table of Contents",
+            r"\- \[Overview\]",
+            r"\- \[Tech Stack\]",
+            r"\- \[Features\]",
+            r"\- \[Installation",
+        ]
+        for pattern in toc_patterns:
+            assert re.search(pattern, readme_content, re.IGNORECASE), \
+                f"README should contain Table of Contents with pattern: {pattern}"
+    
+    def test_readme_has_tech_stack_section(self, readme_content):
+        """Verify README has Tech Stack section with technologies"""
+        assert "## 🛠️ Tech Stack" in readme_content, \
+            "README should have Tech Stack section"
+        
+        tech_keywords = ["React", "Node.js", "Express", "MongoDB", "JWT"]
+        for tech in tech_keywords:
+            assert tech in readme_content, \
+                f"README Tech Stack should mention {tech}"
+    
+    def test_readme_has_installation_section(self, readme_content):
+        """Verify README has Installation & Setup section"""
+        assert "## 🚀 Installation & Setup" in readme_content, \
+            "README should have Installation & Setup section"
+        
+        # Check for prerequisites
+        assert "Prerequisites" in readme_content, \
+            "Installation section should list prerequisites"
+        
+        # Check for code blocks with bash commands
+        assert "```bash" in readme_content or "```sh" in readme_content, \
+            "Installation section should have bash code blocks"
+        
+        # Check for npm install commands
+        assert "npm install" in readme_content, \
+            "Installation section should include npm install commands"
+    
+    def test_readme_has_environment_variables_section(self, readme_content):
+        """Verify README documents environment variables"""
+        assert "## 🔐 Environment Variables" in readme_content, \
+            "README should have Environment Variables section"
+        
+        env_vars = ["PORT", "MONGO_URI", "JWT_SECRET", "NODE_ENV"]
+        for var in env_vars:
+            assert var in readme_content, \
+                f"Environment Variables section should document {var}"
+        
+        # Check for .env.example reference
+        assert ".env.example" in readme_content, \
+            "README should reference .env.example file"
+    
+    def test_readme_has_project_structure_section(self, readme_content):
+        """Verify README documents project structure"""
+        assert "## 📁 Project Structure" in readme_content, \
+            "README should have Project Structure section"
+        
+        # Check for directory tree
+        assert "/client" in readme_content and "/server" in readme_content, \
+            "Project Structure should show /client and /server directories"
+    
+    def test_readme_has_usage_section(self, readme_content):
+        """Verify README has Usage section with instructions"""
+        assert "## 📖 Usage" in readme_content, \
+            "README should have Usage section"
+        
+        usage_keywords = ["Register", "Login", "Browse", "Request", "Dashboard"]
+        assert any(keyword in readme_content for keyword in usage_keywords), \
+            "Usage section should describe how to use the application"
+    
+    def test_readme_has_api_documentation_section(self, readme_content):
+        """Verify README has API Documentation section"""
+        assert "## 📚 API Documentation" in readme_content, \
+            "README should have API Documentation section"
+        
+        # Check for endpoint table format
+        assert "| Method | Endpoint |" in readme_content or "| GET |" in readme_content, \
+            "API Documentation should include endpoint tables"
+    
+    def test_readme_has_contributing_section(self, readme_content):
+        """Verify README has Contributing section"""
+        assert "## 🤝 Contributing" in readme_content, \
+            "README should have Contributing section"
+        
+        # Check for fork/clone instructions
+        assert "fork" in readme_content.lower() or "Fork" in readme_content, \
+            "Contributing section should mention forking"
+    
+    def test_readme_has_troubleshooting_section(self, readme_content):
+        """Verify README has Troubleshooting section"""
+        assert "## 🛠️ Troubleshooting" in readme_content or "## Troubleshooting" in readme_content, \
+            "README should have Troubleshooting section"
+        
+        # Check for common issues
+        common_issues = ["CORS", "Database", "Port", "JWT"]
+        assert any(issue in readme_content for issue in common_issues), \
+            "Troubleshooting section should cover common issues"
+    
+    def test_readme_has_license_section(self, readme_content):
+        """Verify README has License section"""
+        assert "## 📄 License" in readme_content, \
+            "README should have License section"
+        
+        assert "MIT" in readme_content, \
+            "License section should specify MIT license"
+    
+    def test_readme_has_contact_section(self, readme_content):
+        """Verify README has Contact & Acknowledgments section"""
+        assert "## 👥 Contact & Acknowledgments" in readme_content, \
+            "README should have Contact & Acknowledgments section"
+        
+        # Check for author info
+        assert "Pankaj Yadav" in readme_content, \
+            "Contact section should mention author Pankaj Yadav"
+    
+    def test_readme_has_demo_links(self, readme_content):
+        """Verify README contains demo video links"""
+        assert "drive.google.com" in readme_content or "screenrec.com" in readme_content, \
+            "README should contain demo video links"
+    
+    def test_readme_has_screenshots_section(self, readme_content):
+        """Verify README has Screenshots section"""
+        assert "## 📸 Screenshots" in readme_content, \
+            "README should have Screenshots section"
+    
+    def test_readme_has_horizontal_rules(self, readme_content):
+        """Verify README uses horizontal rules for section separation"""
+        assert "---" in readme_content, \
+            "README should use horizontal rules (---) between sections"
+    
+    def test_readme_has_emoji_headers(self, readme_content):
+        """Verify README uses emoji in headers for better visual organization"""
+        emoji_pattern = r"## [\u{1F300}-\u{1F9FF}]"  # Unicode emoji range
+        assert re.search(emoji_pattern, readme_content, re.UNICODE), \
+            "README should use emoji in section headers"
+
+
+class TestReadmeCodeBlocks:
+    """Tests to verify code blocks in README are properly formatted"""
+    
+    @pytest.fixture(scope="class")
+    def readme_content(self):
+        """Fixture to load README.md content"""
+        readme_path = Path("README.md")
+        if not readme_path.exists():
+            pytest.skip("README.md not found")
+        return readme_path.read_text(encoding="utf-8")
+    
+    def test_bash_code_blocks_have_syntax_highlighting(self, readme_content):
+        """Verify bash commands use proper syntax highlighting"""
+        # Check for ```bash or ```sh
+        bash_blocks = re.findall(r'```bash\n(.*?)```', readme_content, re.DOTALL)
+        sh_blocks = re.findall(r'```sh\n(.*?)```', readme_content, re.DOTALL)
+        
+        assert len(bash_blocks) > 0 or len(sh_blocks) > 0, \
+            "README should use ```bash or ```sh for shell commands"
+    
+    def test_env_code_blocks_present(self, readme_content):
+        """Verify environment variables are shown in code blocks"""
+        env_blocks = re.findall(r'```(?:env|bash|sh)?\n(.*?)```', readme_content, re.DOTALL)
+        
+        has_env_content = any('PORT=' in block or 'MONGO_URI=' in block for block in env_blocks)
+        assert has_env_content, \
+            "README should show environment variables in code blocks"
+    
+    def test_no_broken_code_blocks(self, readme_content):
+        """Verify all code blocks are properly closed"""
+        open_blocks = readme_content.count("```")
+        assert open_blocks % 2 == 0, \
+            f"README has unclosed code blocks (found {open_blocks} backtick groups)"
+
+
+class TestReadmeLinks:
+    """Tests to verify links in README are properly formatted"""
+    
+    @pytest.fixture(scope="class")
+    def readme_content(self):
+        """Fixture to load README.md content"""
+        readme_path = Path("README.md")
+        if not readme_path.exists():
+            pytest.skip("README.md not found")
+        return readme_path.read_text(encoding="utf-8")
+    
+    def test_internal_links_use_anchors(self, readme_content):
+        """Verify internal navigation links use proper anchor format"""
+        # Check for table of contents links like [Features](#-features)
+        anchor_links = re.findall(r'\[([^\]]+)\]\(#[^\)]+\)', readme_content)
+        assert len(anchor_links) > 0, \
+            "README should use anchor links for internal navigation"
+    
+    def test_external_links_use_https(self, readme_content):
+        """Verify external links use HTTPS where applicable"""
+        # Find all URLs
+        urls = re.findall(r'https?://[^\s\)]+', readme_content)
+        
+        # Check that github and other sensitive sites use HTTPS
+        for url in urls:
+            if 'github.com' in url or 'shields.io' in url:
+                assert url.startswith('https://'), \
+                    f"External link should use HTTPS: {url}"
+
+
+class TestReadmeCompleteness:
+    """Tests to verify README covers all major features mentioned in plan"""
+    
+    @pytest.fixture(scope="class")
+    def readme_content(self):
+        """Fixture to load README.md content"""
+        readme_path = Path("README.md")
+        if not readme_path.exists():
+            pytest.skip("README not found")
+        return readme_path.read_text(encoding="utf-8")
+    
+    def test_features_section_complete(self, readme_content):
+        """Verify Features section covers all major feature categories"""
+        feature_categories = [
+            "Authentication",
+            "User Management", 
+            "Browse",
+            "Dashboard",
+            "Skill Swap",
+            "Admin Panel"
+        ]
+        
+        for category in feature_categories:
+            assert category in readme_content, \
+                f"Features section should cover {category}"
+    
+    def test_admin_panel_documented(self, readme_content):
+        """Verify Admin Panel features are documented (was incomplete before)"""
+        admin_content = readme_content[readme_content.find("Admin"):readme_content.find("Admin")+500] if "Admin" in readme_content else ""
+        
+        assert "Admin Panel" in readme_content or "admin" in readme_content.lower(), \
+            "README should document Admin Panel features"
+        
+        # Check for admin-specific features
+        admin_features = ["Dashboard", "User Management", "Analytics"]
+        assert any(feature in admin_content for feature in admin_features), \
+            "Admin section should describe specific admin capabilities"
+
+
+if __name__ == "__main__":
+    pytest.main([__file__, "-v"])
